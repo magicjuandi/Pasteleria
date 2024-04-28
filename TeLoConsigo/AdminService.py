@@ -1,21 +1,20 @@
-from abc import abstractmethod
-from abc import ABCMeta
+from abc import ABC
+import User
 
-class AdminService (metaclass=ABCMeta):
+class AdminService(ABC):
+    
+    def __init__(self):
+        self.user = []
 
-    @abstractmethod
-    def Add(self):
-        pass
+    def Add(self, user: User):
+        self.user.append(user)
 
-     
-    @abstractmethod
-    def Delete(self):
-        pass
+    def Delete(self, id: int):
+        del self.user[id]
 
-    @abstractmethod
-    def Edit(self):
-        pass
+    def Edit(self, id: str, new_user: User):
+        self.user[id] = new_user
 
-    @abstractmethod
     def List(self):
-        pass
+        for i, user in enumerate(self.user):
+            print(f"User {i}: {user.name}, {user.phone}, {user.email}, {user.type}")

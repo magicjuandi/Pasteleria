@@ -1,4 +1,4 @@
-import AdminService
+from AdminService import AdminService
 from User import User
 
 
@@ -29,16 +29,18 @@ def main():
                 print("Tipo de usuario no válido.")
               continue"""
             
-            adminService.Add(User)
-            print("USer added.")
+            user = User(name,phone,email,type)
+            adminService.Add(user)
+            print("User added.")
 
         elif choice == '2':
+            id1 = int(input("Id: "))
             name = input("Name: ")
             phone = input("Phone: ")
             email = input("Email: ")
             type = input("Type of client (1. Ocassional, 2. Wholesaler): ")
-
-            adminService.update(id, User)
+            user2 = User(name,phone,email,type)
+            adminService.Edit(id1, user2)
             print("User updated.")
 
             """ if tipo_usuario.upper() == 'O':
@@ -50,13 +52,13 @@ def main():
                 continue """
        
         elif choice == '3':
-            id = int(input("Ingrese el índice del usuario a eliminar: "))
-            adminService.delete(id) # type: ignore
+            id2 = int(input("Ingrese el índice del usuario a eliminar: "))
+            adminService.Delete(id2)
             print("User deleted.")
         
         elif choice == '4':
             print("Users:")
-            adminService.list()
+            adminService.List()
         
         elif choice == '5':
             print("Exiting...")
