@@ -1,5 +1,5 @@
 import SucursalPasteleria
-import Cliente
+import Pastelero
 
 class Main:
     @staticmethod
@@ -8,7 +8,7 @@ class Main:
         sucursal_pasteleria = SucursalPasteleria()
         
         # Crear un cliente y asignarle la sucursal de pastelería
-        cliente = Cliente(sucursal_pasteleria)
+        cliente = Pastelero(sucursal_pasteleria)
         
         # Tomar una orden de pastel de chocolate
         cliente.tomar_orden("chocolate")

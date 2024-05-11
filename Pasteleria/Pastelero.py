@@ -1,4 +1,4 @@
-class Cliente:
+class Pastelero:
     def __init__(self, pasteleria_factory):
         self.pasteleria_factory = pasteleria_factory
     
